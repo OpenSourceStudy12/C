@@ -1,0 +1,24 @@
+1.上午PPT上打印不及格学生信息的练习。
+   并思考struct student结构中姓名成员char *name,与char name[20]的区别在哪里？
+
+2.从键盘输入3个学生的学号，姓名 ，性别，成绩，并打印3个学生的信息。
+
+3.写一个函数完成字符串的倒置功能
+	例如 abcdef----->fedcba
+  函数原型：void invert(char *str,char *daozhi_str)
+  函数参数: str指向要倒置字符串的指针
+            daozhi_str指向倒置之后字符串的指针 
+  函数返回值：无
+
+4.写一个函数完成字符串的倒置功能
+	例如 abcdef----->fedcba
+  函数原型：char* invert(char *str)-----
+  函数参数: str指向要倒置字符串的指针
+  函数返回值：倒置之后的字符串首地址
+
+5.完成一个函数 ，实现低于平均成绩的学生的成绩放于below数组中，并且返回低于平均成绩的学生的个数。
+int get_below(int score[],int stu_num,int below[]);
+
+6.完成一个函数 ，实现低于平均成绩的学生的成绩放于below数组中，并且将低于平均成绩的学生个数通过参数返回
+void get_below(int score[],int stu_num,int below[],int *below_num);
+

@@ -1,0 +1,5 @@
+int setbit1(int x,int y)将x的第y位置1
+
+int setbit_f(int x,int y)将x的第y位翻转
+
+int setbit0(int x,int y,int n)将x的第y位开始的n位置0

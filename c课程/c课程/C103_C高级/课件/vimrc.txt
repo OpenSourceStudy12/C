@@ -1,0 +1,11 @@
+#/etc/vimrc或~/.vimrc
+set tabstop=4
+set shiftwidth=4
+#在文件中找到 "syntax on   这一行，去掉前面的双引号"，双引号是注释的意思
+
+#3、自动缩进
+
+#在文件末尾添加一行，输入:
+set autoindent
+#在添加一行，输入:
+set cindent

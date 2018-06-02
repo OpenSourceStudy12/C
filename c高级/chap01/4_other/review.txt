@@ -1,0 +1,8 @@
+1 #error
+
+
+#和##
+
+__FILE__ __LINE__ __DATE__ __TIME__ __func__
+
+#line

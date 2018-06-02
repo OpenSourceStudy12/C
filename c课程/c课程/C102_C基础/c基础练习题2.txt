@@ -1,0 +1,44 @@
+1.请编写一个函数 int sum(int n),  实现求1+2+3+...+n的和，并返回
+
+2.求1~n内所有7的倍数的数字的和，并返回  ,函数原型int fun(int n)
+
+3.打印乘法口诀表 void print(int n); 打印前n行乘法口诀表，要求n >=0 且n<=9
+
+4.请编写一个函数 float arv(int a[],int n),求整形数组a的平均值，并将平均值返回
+
+5.请编写一个函数 int getMax(int a[],int n)，求有n个元素的整形数组的最小值，并将最小值返回。
+
+6.编写函数 int getStrNum(char *str);统计字符串str里数字出现的个数，并返回。
+
+7.int getStrLen(char *str);统计字符串str里有效字符个数，并返回。不可使用strlen函数
+
+8.请编写一个函数void fun(char a[],char b[],int n),其功能是：
+删除一个字符串中指定下标的字符。
+其中，a指向原字符串，删除后的字符串存放在b所指的数组中，n中存放指定的下标。
+
+9.定义一个商品信息的结构struct product，要求手动输入商品信息，并且商品价格大于200时价格可以打85折，并输出商品信息。
+struct date
+
+{
+
+	int year;
+
+	int month;
+
+	int day;
+
+};
+
+struct product
+
+{
+
+	int pNum;//商品编号
+
+	char name[32];//商品名称
+
+	float price;//价格
+
+	struct date p_data;//生产日期
+
+};

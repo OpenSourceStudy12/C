@@ -1,0 +1,13 @@
+
+#include "file.c"　//效率低，会把函数的定义全部拷贝到当前文件，造成空间浪费
+#include "file.h" //效率高，相当于我们之前说的广告单．
+
+gcc main.c file.c
+
+
+
+
+1 文件包含实验
+	定义两个文件　main.c func.c
+	func.c 定义一个函数，strDeal(char *chr),完成一个字符串的正序和反序的输出，比如：我输入一个abcd,函数返回一个　abcddcbd.
+	main.c 调用strDead()函数．

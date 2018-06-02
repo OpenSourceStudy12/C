@@ -1,0 +1,142 @@
+
+                         作用域                             生存期
+局部变量          定义函数内部             申明开始-函数结束
+静态局部变量   定义函数内部             声明开始-程序结束
+全局变量           定义行--所有.c文件    声明开始-程序结束
+静态全局变量    定义行--本.c结束     声明开始-程序结束
+
+11.19日练习。
+1.编写一个函数，求出能够满足“整除2余1，整除3余2，整除4余3，整除5余4”的最小的数，并返回。  
+ int function()
+
+
+
+2.请编写一个函数void fun(char *tt,int pp[]),统计在tt字符数组（键盘输入，\n结束）中"a"到"z"26个字母各自出现的次数，并依次放在pp所指的数组中。
+
+3.请编写一个函数fun，它的功能是：找出一维整型数组元素中最大的值和它所在的下标，最大的值和它所在的下标通过形参传回。数组元素中的值已在主函数中赋予。主函数中x是数组名，n 是x中的数据个数，max存放最大值，index存放最大值所在元素的下标。
+function(int x[],int n,int *pmax, int *p_index)
+
+4、请编写函数void fun(int x,int pp[],int *n),
+它的功能是：
+求出能整除x（不大于100）且不是偶数的各整数，
+并按从小到大的顺序放在pp所指的数组中，
+这些除数的个数通过形参n返回。
+编程要求：
+需编写main()函数，通过调用fun()函数实现相应的功能，并输出结果 。
+例如，若程序运行时输入x的值为30，则输出4个符合要求的数：1，3，5，15。
+
+
+int fun(int x,int pp[],int *n)
+{
+	int index;
+	int *p_p=pp;
+	if(x< -100 || x>100)  //入参检查，健壮性
+	{
+	printf ("param error!\n");
+	return -1；
+	}
+	for(index=1;index<x;index++)
+	{
+		if((x%index==0)&&（index%2 !=0))
+		{
+			*p_p=index;
+			(*n)++; 	//指向的内容++
+			p_p++;
+		}
+	}
+return 0;
+}
+
+5.（使用递归函数完成）编写函数fun,它的功能是：利用以下的简单迭代方法求方程cos(x)-x=0的一个实根。 
+迭代步骤如下：
+(1)取x1初值为0.0； 
+(2)x0=x1,把x1的值赋各x0; 
+
+(3)x1=cos(x0),求出一个新的x1; 
+
+(4)若x0-x1的绝对值小于0.000001，则执行步骤(5),否则执行步骤(2); 
+
+(5)所求x1就是方程cos(x)-x=0的一个实根，作为函数值返回。 
+程序将输出Root=0.739085。 
+
+
+11月20日练习
+1.求字符串的长度。
+
+2.请编写一个函数fun，它的功能是：将ss所指字符串中所有下标为奇数位置上的字母改为空格。
+3.重写strcpy函数my_strcpy,完成字符串的拷贝
+void my_strcpy(char *des,char *src)
+{
+	char *p_des=des;
+	char *p_src=src;
+	while(*p_src!='\0')
+		*p_des++=*p_src++;
+	*p_des='\0';
+}
+4.定义一个商品信息的结构struct product ;商品的描述信息至少有4种，要求手动输入商品信息，并且商品价格大于200时价格可以打85折，并输出商品信息。
+struct date
+
+{
+
+	int year;
+
+	int month;
+
+	int day;
+
+};
+
+struct product
+
+{
+
+	int pNum;
+
+	char name[32];
+
+	float price;
+
+	struct date p_data;
+
+};
+int main()
+{
+
+	struct product p1;
+	printf("编号\t价格 \t生产日期年 \t月\t日\n");
+
+	scanf("%d %f %d %d %d",&p1.pNum,&p1.price,&p1.p_data.year,&p1.p_data.month,&p1.p_data.day);
+	getchar();
+
+	printf("请输入商品名称\n");
+	gets(p1.name);
+	if(p1.price>200)
+
+		p1.price*=0.85;
+	printf("编号：%d;名称%s;价格:%f;生产日期%d/%d/%d\n",p1.pNum,p1.name,p1.price,p1.p_data.year,p1.p_data.month,p1.p_data.day);
+
+	
+}
+5.请编写一个函数void fun(char a[],char b[],int n),其功能是：
+删除一个字符串中指定下标的字符。
+其中，a指向原字符串，删除后的字符串存放在b所指的数组中，n中存放指定的下标。
+void fun(char a[],char b[],int n)
+{
+	char *p_a=a;
+	char *p_b=b;
+	int i=0;
+	while(*p_a!='\0')
+	{
+		if(i != n)
+		{
+			*p_b=*p_a
+			p_b++;
+		}
+		p_a++;
+		i++;
+	}
+	*p_b='\0'
+}
+
+
+ 

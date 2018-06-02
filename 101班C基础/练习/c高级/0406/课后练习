@@ -1,0 +1,16 @@
+第一章
+0406课后练习
+１　复习并练习如何使用文件包含\条件编译．
+２　利用条件编译语句　控制不同的机器配置（COM_A COM_B COM_C）
+    实现不同的操作 double operation(int a, int b)
+	COM_A	1/a+1/b
+	COM_B	a/b+b/a
+	COM_C	a*a/b
+　　文件：
+	define.h	//配置COM_A COM_B COM_C
+	operation.h
+	operation.c	(operation(int,int))
+	main.c
+
+　　涉及知识点：文件包含\条件编译
+３　熟悉使用预编译的其它关键字,#error,#line,##

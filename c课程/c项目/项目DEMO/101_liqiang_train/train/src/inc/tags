@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Admin	admin.h	/^typedef struct  Admin\/\/管理员信息$/;"	s
+PAdmin	admin.h	/^}*PAdmin;$/;"	t	typeref:struct:Admin
+PSta	train.h	/^}Sta,*PSta;$/;"	t	typeref:struct:Station
+PTr	train.h	/^}Tr,*PTr;$/;"	t	typeref:struct:train
+PUSER	user.h	/^}USER,*PUSER;$/;"	t	typeref:struct:User
+PWait	user.h	/^}Wait,*PWait;$/;"	t	typeref:struct:wait_user
+Sta	train.h	/^}Sta,*PSta;$/;"	t	typeref:struct:Station
+Station	train.h	/^typedef struct Station\/\/站点信息$/;"	s
+Tr	train.h	/^}Tr,*PTr;$/;"	t	typeref:struct:train
+USER	user.h	/^}USER,*PUSER;$/;"	t	typeref:struct:User
+User	user.h	/^typedef struct User$/;"	s
+Wait	user.h	/^}Wait,*PWait;$/;"	t	typeref:struct:wait_user
+_ADMIN_H	admin.h	9;"	d
+_COMMON_H	common.h	9;"	d
+_MENU_H	menu.h	9;"	d
+_TOOLER_H	tooler.h	9;"	d
+_TRAIN_H	train.h	9;"	d
+_USER_H	user.h	9;"	d
+des	train.h	/^	char des[20];$/;"	m	struct:train
+des	user.h	/^	char des[20];$/;"	m	struct:wait_user
+des_time	train.h	/^	char des_time[7];$/;"	m	struct:train
+name	admin.h	/^	char name[20];$/;"	m	struct:Admin
+name	user.h	/^	char name[20];$/;"	m	struct:User
+name	user.h	/^	char name[30];$/;"	m	struct:wait_user
+next	train.h	/^	struct Station *next;$/;"	m	struct:Station	typeref:struct:Station::Station
+next	train.h	/^	struct train *next;$/;"	m	struct:train	typeref:struct:train::train
+pswd	admin.h	/^	char pswd[8];$/;"	m	struct:Admin
+pswd	user.h	/^	char pswd[20];$/;"	m	struct:User
+remain	train.h	/^	int remain;$/;"	m	struct:train
+sta	train.h	/^	char sta[20];$/;"	m	struct:Station
+sta_head	train.h	/^	PSta sta_head;$/;"	m	struct:train
+start	train.h	/^	char start[20];$/;"	m	struct:train
+start	user.h	/^	char start[20];$/;"	m	struct:wait_user
+start_time	train.h	/^	char start_time[7];$/;"	m	struct:train
+ticket	train.h	/^	char ticket[7];$/;"	m	struct:train
+time	train.h	/^	char time[7];$/;"	m	struct:Station
+time	user.h	/^	char time[6];$/;"	m	struct:wait_user
+train	train.h	/^typedef struct train\/\/车票信息$/;"	s
+train	user.h	/^	char train[7];$/;"	m	struct:wait_user
+wait_user	user.h	/^typedef struct wait_user$/;"	s

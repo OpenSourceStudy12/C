@@ -1,0 +1,53 @@
+实训目的
+    通过对linux下的库文件的制作，进一步巩固学生库文件制作的理解
+实训内容
+   （1）使用vi编辑器，在同一目录下编辑三个简单的程序：format.h、file.c和file1.c的文件中
+/*format.h*/  
+       #define  PR  printf
+       #define  NL  “\n”
+       #define  D   “%d”
+       #define  D1  D  NL
+       #define  D2  D   D  NL
+       #define  D3  D   D   D  NL
+       #define  D4  D   D   D   D  NL
+       #define  S   “%s”
+
+/*file.c*/  
+       #include  <stdio.h>
+       #include  “format.h” 
+
+/*file1.c*/
+         #include  “file.c”
+  
+         int main（）
+           {
+            int  a，b，c，d；
+            char string[]=“CHINA”;
+            a=1；
+            b=2；
+            c=3；
+            d=4；
+            PR（D1，a）；
+            PR（D2，a，b）；
+            PR（D3，a，b，c）；
+            PR（D4，a，b，c，d）；
+            PR（S，string）；
+           }
+     
+   （2）制作出file.o文件
+   （3）制作出libmyfile1.a
+   （4）制作出file
+   （5）运行验证（删除libmyfile1.a再验证）
+   （6）制作出libmyfile1.so
+   （7）制作出file
+   （8）运行验证（注意目录/usr/lib/下的libmyfile1.so文件）
+   
+实训步骤
+   （1）在工作目录下新建文件file.c、file1.c  format.h，并用Vi启动：vi  file.c、 vi  file1.c 、 vi  format.h
+   （2）在shell中输入命令gcc  -c  file.c  ，然后输入命令ls验证
+   （3）在shell中输入命令ar cr  libmyfile.a  file.o  ，然后输入命令ls验证
+   （4）在shell中输入命令gcc file1.c  libmyfile.a -o file1  
+   （5）输入命令：./file1 运行验证，删除libmyfile1.a后再运行验证
+   （6）在shell中输入命令gcc -shared -fPCI -o libmyfile1.so file.o  ，然后输入命令ls验证
+   （7）在shell中输入命令gcc file1.c  libmyfile1.so -o file1  
+   （8）输入命令：./file1 运行验证，删除/usr/lib/目录下的libmyfile1.so后再运行验证

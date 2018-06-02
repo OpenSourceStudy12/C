@@ -1,0 +1,67 @@
+实训目的
+    通过调试一个有问题的程序，使学生进一步熟练使用vi操作，而且熟练掌握Gcc编译命令及Gdb的调试命令，通过对有问题程序的跟踪调试，进一步提高发现问题和解决问题的能力
+实训内容
+   （1）使用vi编辑器，将以下代码输入到名为greet.c的文件中
+         #includ  <stdio.h>
+         #include <string.h>
+         #include <malloc.h>
+
+         int display1（char *string）;
+         int diaplay2（char *string）;
+  
+         int main（）
+           {
+            char string[] = "Embedded linux"；
+            display1（string）；
+            display2（string）；
+           }
+         int display1（char *string）
+           {
+            printf（“The original string is %s \n”，string）；
+           }
+         int display2（char *string1）
+           {
+            char *string2；
+            int size，i；
+            size = strlen（string1）；
+            string2 =（char *）malloc（size + 1）；
+            for（i=0；i<size；i++）
+               string2[size-i]=string1[i]；
+            string2[size+1]=‘\0’；
+            printf（“The string afterward is %s\n”，string2）；
+           }
+   （2）使用Gcc编译这段代码，注意要加上“-g”选项以方便之后的调试
+   （3）运行生成的可执行文件，观察运行结果
+   （4）使用Gdb调试程序，通过设置断点、单步跟踪，一步步找出错误所在
+   （5）纠正错误，更改源程序并得到正确的结果
+   
+实训步骤
+   （1）在工作目录下新建文件greet.c，并用Vi启动：vi greet.c
+   （2）在vi中输入以上代码
+   （3）在vi中保持并退出：wq
+   （4）用Gcc编译：gcc -g greet.c -o greet
+   （5）运行greet：./greet，输出错误
+   （6）启动Gdb调试
+   （7）查看源代码，使用命令“l”（小写l，在Gdb中，每次显示10行程序）
+   （8）设置断点（在for循环处与printf函数处），命令：“b 25”、“b 28”
+   （9）查看断点设置情况，使用命令“info b”
+   （10）运行代码，使用命令r
+   （11）单步运行代码，使用命令“n”
+   （12）查看暂停点变量值，使用命令“p string2[size-1]”
+   （13）继续单步运行代码数次，并查看变量值，发现string[size-1]赋值正确
+   （14）继续程序的运行，使用命令“c”
+   （15）程序在printf前停止运行，此时依次查看string2[0]、string2[1]、string2[2]……，发现string2[0]没有被正确赋值，而后面的赋值都是正确的，这时定位程序28行，发现原因在于“size-i”。由于i只能增到“size-1”，所以string[0]永远不能被赋值而保持NULL，故不输出任何结果
+   （16）退出Gdb，使用命令q
+   （17）重新编辑greet.c，修改程序
+   （18）使用Gcc重新编译
+   （20）查看程序运行结果：命令“./greet”
+   
+
+
+
+
+
+
+
+
+

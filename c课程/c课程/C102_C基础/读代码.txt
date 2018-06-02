@@ -1,0 +1,194 @@
+【程序5】
+题目：输入三个整数x,y,z，请把这三个数由小到大输出。
+1.程序分析：我们想办法把最小的数放到x上，先将x与y进行比较，如果x>y则将x与y的值进行交换，
+　　　　　　然后再用x与z进行比较，如果x>z则将x与z的值进行交换，这样能使x最小。
+2.程序源代码：
+int main()
+{
+int x,y,z,t;
+scanf("%d%d%d",&x,&y,&z);
+if (x>y)
+{t=x;x=y;y=t;} /*交换x,y的值*/
+if(x>z)
+{t=z;z=x;x=t;}/*交换x,z的值*/
+if(y>z)
+{t=y;y=z;z=t;}/*交换z,y的值*/
+printf("small to big: %d %d %d\n",x,y,z);
+}
+
+【程序4】
+题目：输入某年某月某日，判断这一天是这一年的第几天？
+1.程序分析：以3月5日为例，应该先把前两个月的加起来，然后再加上5天即本年的第几天，特殊
+　　　　　　情况，闰年且输入月份大于3时需考虑多加一天。
+2.程序源代码：
+main()
+{
+int day,month,year,sum,leap;
+printf("\nplease input year,month,day\n");
+scanf("%d,%d,%d",&year,&month,&day);
+switch(month)/*先计算某月以前月份的总天数*/
+{
+　case 1:sum=0;break;
+　case 2:sum=31;break;
+　case 3:sum=59;break;
+　case 4:sum=90;break;
+　case 5:sum=120;break;
+　case 6:sum=151;break;
+　case 7:sum=181;break;
+　case 8:sum=212;break;
+　case 9:sum=243;break;
+　case 10:sum=273;break;
+　case 11:sum=304;break;
+　case 12:sum=334;break;
+　default:printf("data error");break;
+}
+sum=sum+day; 　/*再加上某天的天数*/
+　if(year%400==0||(year%4==0&&year%100!=0))/*判断是不是闰年*/
+　　leap=1;
+　else
+　　leap=0;
+if(leap==1&&month>2)/*如果是闰年且月份大于2,总天数应该加一天*/
+sum++;
+printf("It is the %dth day.",sum);}
+
+第二天练习
+
+1.  	1.教师登陆
+	2.学生登陆
+	3.管理员登陆
+	4.退出
+
+
+1--->教师登陆成功 选择0返回上一层
+2--->学生登陆成功 选择0返回上一层
+3--->管理员登陆成功，选择0返回上一层
+4--->退出
+
+编写函数fun,它的功能是：利用以下的简单迭代方法求方程cos(x)-x=0的一个实根。 
+迭代步骤如下：(1)取x1初值为0.0； (2)x0=x1,把x1的值赋各x0; 
+
+(3)x1=cos(x0),求出一个新的x1; 
+
+(4)若x0-x1的绝对值小于0.000001，则执行步骤(5),否则执行步骤(2); 
+
+(5)所求x1就是方程cos(x)-x=0的一个实根，作为函数值返回。 
+程序将输出Root=0.739085。 
+
+
+3.题目：有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
+
+
+int main()
+{
+	float sum=0;
+	int fenzi=2,fenmu=1,temp;
+	int i;
+	for(i=1;i<21;i++)
+	{
+		sum+=(float)fenzi/fenmu;
+		temp = fenzi;
+		fenzi=fenzi+fenmu;
+		fenmu=temp;
+	}
+	printf("sum = %f\n",sum);
+}
+第三天练习
+
+1.编写一个函数below_arv，将低于平均分的成绩放在below数组里，并且将低于平均分人的个数以地址传递的方式返回
+void below_arv(int score[],int below[],int arr_size, int *num)
+
+
+
+2.从键盘输入5个整数（数组存储），求5个数的最大值
+
+3.从键盘输入一行字符（\n结束）存储在一个字符数组str[100]里，
+统计字符里空格出现的次数。
+
+
+
+周末练习
+
+1.求出1到100之内能被7或者11整除，但不能同时
+被7和11整除的所有整数，并将他们放在a所指的数组中
+
+2.题目：打印出1~1000所有的“水仙花数”，所谓“水仙花数”
+是指一个三位数，其各位数字立方和等于该数本身。
+例如：153是一个“水仙花数”，
+因为153=1的三次方＋5的三次方＋3的三次方。
+
+3.题目：输入一行字符，分别统计出
+其中英文字母、空格、数字和其它字符的个数。
+
+4.从键盘输入一行字符（\n结束），删除其中的空格。
+
+5
+题目：输入两个正整数m和n，求其最大公约数和最小公倍数。
+1.程序分析：利用辗除法。
+
+2.程序源代码：
+main()
+{
+　int a,b,num1,num2,temp;
+　printf("please input two numbers:\n");
+　scanf("%d,%d",&num1,&num2);
+　if(num1<num2)
+　{ temp=num1;
+　　num1=num2;　
+　　num2=temp;
+　}
+a=num1;b=num2;
+while(b!=0)/*利用辗除法，直到b为0为止*/
+　{
+　　temp=a%b;
+　　a=b;
+　　b=temp;
+　}
+printf("gongyueshu:%d\n",a);
+printf("gongbeishu:%d\n",num1*num2/a);
+}
+
+
+12.17练习
+
+1.编写一个函数below_arv，将低于平均分的成绩放在below数组里，并且将低于平均分人的个数以地址传递的方式返回
+void below_arv(int score[],int below[],int arr_size, int *num)
+
+2，练习各种变量的使用
+    当一个全局变量和一个局部变量同名的时候，在函数里访问的是全局变量还是局部变量。
+
+3.编写一个函数，求出能够满足“`
+ int function()
+
+4.请编写一个函数fun，它的功能是：找出一维整型数组元素中最大的值和它所在的下标，最大的值和它所在的下标通过形参传回。数组元素中的值已在主函数中赋予。主函数中x是数组名，n 是x中的数据个数，max存放最大值，index存放最大值所在元素的下标。
+function(int x[],int n,int *pmax, int *p
+_index)
+
+
+12.18日练习
+
+1.练习strncmp的使用，并且弄清楚功能
+2.自己实现 strlen的功能；
+3.请编写一个函数void fun(char *tt,int pp[]),统计在tt字符数组（键盘输入，\n结束）中"a"到"z"26个字母各自出现的次数，并依次放在pp所指的数组中。
+
+4.请编写一个函数fun，它的功能是：将ss所指字符串中所有下标为奇数位置上的字母改为空格。
+
+5.写一个函数将字符串倒置
+void strrev(char *str);
+
+
+12.19日练习
+
+1.重写strcpy函数my_strcpy,完成字符串的拷贝
+2.定义一个商品信息的结构struct product ;商品的描述信息至少有4种，要求手动输入商品信息，并且商品价格大于200时价格可以打85折，并输出商品信息。
+3.请编写一个函数void fun(char a[],char b[],int n),其功能是：
+删除一个字符串中指定下标的字符。
+其中，a指向原字符串，删除后的字符串存放在b所指的数组中，n中存放指定的下标。
+
+
+
+
+
+
+
+
+
